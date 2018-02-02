@@ -1,9 +1,15 @@
+//Main Site CSS
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/placeholders";
+
 body {
   height: 100%;
   font-family: Roboto, sans-serif;
   color: #333;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.5;
 }
 
 .navbar {
@@ -25,6 +31,15 @@ body {
   -ms-flex-align: center;
   align-items: center;
   background-color: hsla(0, 0%, 100%, .93);
+  @include tablet {
+    display: block;
+  }
+  @include large-phone {
+    display: block;
+  }
+  @include phone {
+    display: block;
+  }
 }
 
 .logo {
@@ -36,30 +51,52 @@ body {
   margin-top: 5px;
   margin-bottom: 71px;
   margin-left: 0px;
+  @include tablet {
+    width: 350px;
+  }
+  @include large-phone {
+    width: 250px;
+    margin-bottom: 10px;
+  }
+  &.navbar {
+    position: relative;
+    z-index: auto;
+    width: 15%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 20px;
+    background-color: transparent;
+    @include tablet {
+      width: 250px;
+    }
+    @include large-phone {
+      margin-left: 6px;
+      padding-left: 0px;
+    }
+  }
+  &.footer {
+    display: inline-block;
+    width: 20%;
+    margin-top: 0px;
+    margin-bottom: 17px;
+    float: none;
+    @include tablet {
+      width: 220px;
+    }
+  }
 }
 
-.logo.navbar {
-  position: relative;
-  z-index: auto;
-  width: 15%;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 20px;
-  background-color: transparent;
-}
 
-.logo.footer {
-  display: inline-block;
-  width: 20%;
-  margin-top: 0px;
-  margin-bottom: 17px;
-  float: none;
-}
+
+
 
 .nav_menu {
   width: auto;
   background-color: transparent;
   text-align: right;
+  @include tablet {
+    background-color: #fff;
+  }
 }
 
 .navlink {
@@ -69,24 +106,35 @@ body {
   font-size: 13px;
   font-weight: 500;
   text-transform: uppercase;
-}
-
-.navlink:hover {
-  color: #0588ca;
-}
-
-.navlink.w--current {
-  color: #684f40;
+  &:hover {
+    color: #0588ca;
+  }
+  &.w--current {
+    color: #684f40;
+  }
 }
 
 .hero_section {
   height: 100%;
+  @include large-phone {
+    background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, .49), hsla(0, 0%, 100%, 0) 51%), url('../images/mobile-hero-img.jpg');
+    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, .49), hsla(0, 0%, 100%, 0) 51%), url('../images/mobile-hero-img.jpg');
+    background-position: 0px 0px, 0px 0px;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+  }
+  @include phone {
+    background-position: 0px 0px, 50% 50%;
+  }
 }
 
 .bg_video {
   height: 100%;
   background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, .41), hsla(0, 0%, 100%, 0) 69%);
   background-image: linear-gradient(90deg, hsla(0, 0%, 100%, .41), hsla(0, 0%, 100%, 0) 69%);
+  @include large-phone {
+    display: none;
+  }
 }
 
 .main_tagline_div {
@@ -107,6 +155,20 @@ body {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+  @include tablet {
+    top: 5%;
+    width: 55%;
+    padding-left: 16px;
+  }
+  @include large-phone {
+    top: 2%;
+    width: 60%;
+    padding-left: 0px;
+  }
+  @include phone {
+    top: 6%;
+    width: 75%;
+  }
 }
 
 .main_headline {
@@ -115,8 +177,18 @@ body {
   margin-left: 0px;
   font-family: Cinzel, sans-serif;
   color: #004f7a;
-  line-height: 40px;
+  line-height: 1.125;
   font-weight: 400;
+  @include tablet {
+    font-size: 30px;
+  }
+  @include large-phone {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  @include phone {
+    margin-bottom: 56px;
+  }
 }
 
 .main_text {
@@ -124,8 +196,14 @@ body {
   margin-left: 0px;
   color: #684f40;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 1.5;
   font-weight: 300;
+  @include tablet {
+    font-size: 16px;
+  }
+  @include large-phone {
+    display: none;
+  }
 }
 
 .main_taglines_inside_div {
@@ -134,6 +212,13 @@ body {
   padding-top: 25px;
   border-top: 1px solid rgba(104, 79, 64, .5);
   border-bottom: 1px none #684f40;
+  @include tablet {
+    margin-left: 77px;
+  }
+  @include large-phone {
+    margin-left: 20px;
+    padding-top: 10px;
+  }
 }
 
 .main_btn {
@@ -158,22 +243,37 @@ body {
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.main_btn:hover {
-  background-color: #0588ca;
-}
-
-.main_btn.brown {
-  background-color: #684f40;
-}
-
-.main_btn.brown:hover {
-  background-color: #412d22;
+  line-height: 1.125;
+  @include tablet {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 19px;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    font-size: 14px;
+  }
+  @include large-phone {
+    margin-bottom: 5px;
+    padding: 8px 10px 8px 15px;
+    font-size: 12px;
+  }
+  &:hover {
+    background-color: #0588ca;
+  }
+  &.brown {
+    background-color: #684f40;
+    &:hover {
+      background-color: #412d22;
+    }
+  }
 }
 
 .main_btn_img {
   margin-right: 15px;
+  @include large-phone {
+    margin-right: 6px;
+  }
 }
 
 .about_section {
@@ -186,6 +286,15 @@ body {
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, fixed;
+  @include tablet {
+    background-image: -webkit-linear-gradient(270deg, rgba(226, 230, 233, .89), rgba(226, 230, 233, .89)), url('../images/sholder-image.jpg');
+    background-image: linear-gradient(180deg, rgba(226, 230, 233, .89), rgba(226, 230, 233, .89)), url('../images/sholder-image.jpg');
+    background-position: 0px 0px, 78% 50%;
+  }
+  @include large-phone {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
 }
 
 .container_div {
@@ -212,40 +321,45 @@ body {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+  @include phone {
+    width: 90%;
+  }
+  &.testimonials {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    @include tablet {
+      width: 90%;
+    }
+  }
+  &.footer {
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    text-align: center;
+  }
+  &.test {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
-.container_div.testimonials {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
 
-.container_div.footer {
-  display: block;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  text-align: center;
-}
-
-.container_div.test {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
 
 .section_headline {
   width: 100%;
@@ -254,42 +368,58 @@ body {
   font-family: Cinzel, sans-serif;
   color: #004f7a;
   font-size: 56px;
-  line-height: 54px;
+  line-height: 1.125;
   font-weight: 400;
+  @include large-phone {
+    font-size: 38px;
+  }
+  @include phone {
+    margin-bottom: 20px;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.small {
+    margin-bottom: 9px;
+    font-size: 22px;
+    text-align: center;
+  }
 }
 
-.section_headline.center {
-  text-align: center;
-}
 
-.section_headline.small {
-  margin-bottom: 9px;
-  font-size: 22px;
-  line-height: 24px;
-  text-align: center;
-}
 
 .text {
   margin-bottom: 30px;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.5;
   font-weight: 300;
-}
-
-.text.white {
-  color: #000;
+  @include large-phone {
+    font-size: 14px;
+  }
+  &.white {
+    color: #000;
+  }
 }
 
 .text_div {
   width: 40%;
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .image_div {
   width: 58%;
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .team_img {
   margin-top: -42px;
+  @include tablet {
+    margin-top: 0px;
+  }
 }
 
 .shoulder_pain_section {
@@ -301,10 +431,25 @@ body {
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, fixed;
+  @include tablet {
+    background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, .8)), url('../images/sholder-image.jpg');
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, .8)), url('../images/sholder-image.jpg');
+    background-position: 0px 0px, 78% 50%;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: scroll, fixed;
+  }
+  @include large-phone {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
 }
 
 .shoulder_pain_test_div {
   width: 39%;
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .text_field {
@@ -313,6 +458,9 @@ body {
   border-color: rgba(104, 79, 64, .39);
   border-radius: 30px;
   background-color: hsla(0, 0%, 100%, .88);
+  @include tablet {
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, .25);
+  }
 }
 
 .submit_btn {
@@ -322,10 +470,9 @@ body {
   border-radius: 30px;
   background-color: #684f40;
   text-transform: uppercase;
-}
-
-.submit_btn:hover {
-  background-color: #0588ca;
+  &:hover {
+    background-color: #0588ca;
+  }
 }
 
 .test_question {
@@ -334,7 +481,7 @@ body {
   font-family: Roboto, sans-serif;
   color: #ce7504;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: 400;
 }
 
@@ -344,7 +491,7 @@ body {
   margin-bottom: 10px;
   color: #004f7a;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1.125;
   font-weight: 300;
 }
 
@@ -384,6 +531,14 @@ body {
   background-position: 0px 0px, 0px 0px;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
+  @include large-phone {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  @include phone {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .testimonial_div {
@@ -397,22 +552,72 @@ body {
   border-radius: 0px;
   background-color: transparent;
   text-align: center;
+  @include tablet {
+    width: 45%;
+    margin-bottom: 40px;
+    padding-right: 31px;
+    padding-left: 31px;
+  }
+  @include large-phone {
+    width: 100%;
+  }
+  @include phone {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  &._1 {
+    @include tablet {
+      width: 100%;
+      margin-bottom: 0px;
+    }
+    @include large-phone {
+      background-image: -webkit-linear-gradient(0deg, #fff, hsla(0, 0%, 100%, .47)), url('../images/testimonials-image1.jpg');
+      background-image: linear-gradient(90deg, #fff, hsla(0, 0%, 100%, .47)), url('../images/testimonials-image1.jpg');
+      background-position: 0px 0px, 50% 15%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+    }
+    @include phone {
+      background-position: 0px 0px, 75% 50%;
+    }
+  }
+  &._2 {
+    height: 500px;
+    background-image: url('../images/parallax-image.jpg');
+    background-position: 50% 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    @include tablet {
+      width: 100%;
+      margin-bottom: 0px;
+      background-position: 0px 0px, 22% 50%;
+    }
+    @include large-phone {
+      padding-right: 11px;
+      background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, .67), #fff), url('../images/testimonials-image2.jpg');
+      background-image: linear-gradient(90deg, hsla(0, 0%, 100%, .67), #fff), url('../images/testimonials-image2.jpg');
+      background-position: 0px 0px, 22% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+    }
+    @include phone {
+      padding-right: 20px;
+      background-position: 0px 0px, 14% 50%;
+    }
+  }
 }
 
-.testimonial_div._2 {
-  height: 500px;
-  background-image: url('../images/parallax-image.jpg');
-  background-position: 50% 0px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+
 
 .test-img {
   display: block;
   margin-right: auto;
   margin-bottom: 30px;
   margin-left: auto;
+  @include phone {
+    margin-bottom: 5px;
+  }
 }
 
 .testimonials_name {
@@ -428,6 +633,12 @@ body {
   color: #004f7a;
   font-size: 28px;
   font-weight: 400;
+  @include tablet {
+    margin-left: -31px;
+  }
+  @include large-phone {
+    padding-left: 30px;
+  }
 }
 
 .container_flex {
@@ -450,6 +661,23 @@ body {
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
+  @include tablet {
+    width: 100%;
+    padding: 73px 107px;
+    background-image: -webkit-linear-gradient(270deg, #fff 11%, hsla(0, 0%, 100%, .63)), url('../images/location-img.jpg');
+    background-image: linear-gradient(180deg, #fff 11%, hsla(0, 0%, 100%, .63)), url('../images/location-img.jpg');
+    background-position: 0px 0px, 0px 50%;
+    background-size: auto, cover;
+    background-repeat: repeat, no-repeat;
+    background-attachment: scroll, scroll;
+  }
+  @include large-phone {
+    padding-right: 65px;
+    padding-left: 65px;
+  }
+  @include phone {
+    padding: 50px 20px;
+  }
 }
 
 .locations_section {
@@ -471,6 +699,19 @@ body {
   -ms-flex-align: start;
   align-items: flex-start;
   background-color: #022436;
+  @include tablet {
+    width: 100%;
+    padding: 50px 94px;
+  }
+  @include large-phone {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  @include phone {
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+  }
 }
 
 .contact_headline {
@@ -478,11 +719,21 @@ body {
   margin-bottom: 30px;
   font-family: Cinzel, sans-serif;
   font-weight: 400;
-}
-
-.contact_headline.white {
-  width: 100%;
-  color: #fff;
+  line-height: 1.125;
+  @include tablet {
+    font-size: 28px;
+  }
+  &.white {
+    width: 100%;
+    color: #fff;
+    @include tablet {
+      margin-left: 20px;
+      padding-left: 0px;
+    }
+    @include phone {
+      margin-left: 0px;
+    }
+  }
 }
 
 .text_area {
@@ -492,6 +743,9 @@ body {
   border-width: 1px;
   border-color: rgba(104, 79, 64, .39);
   border-radius: 20px;
+  @include tablet {
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, .25);
+  }
 }
 
 .headline_div {
@@ -503,6 +757,15 @@ body {
   margin-right: 9px;
   margin-left: 9px;
   padding-right: 10px;
+  @include tablet {
+    padding-right: 0px;
+  }
+  @include phone {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+  }
 }
 
 .location_headline {
@@ -519,8 +782,11 @@ body {
   margin-bottom: 20px;
   color: #a5daf5;
   font-size: 18px;
-  line-height: 26px;
+  line-height: 1.5;
   font-weight: 300;
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 .phone {
@@ -528,6 +794,9 @@ body {
   margin-bottom: 45px;
   color: #fff;
   font-weight: 400;
+  @include tablet {
+    font-size: 20px;
+  }
 }
 
 .map {
@@ -546,10 +815,9 @@ body {
   color: #0588ca;
   text-decoration: none;
   text-transform: none;
-}
-
-.footer_link:hover {
-  color: #684f40;
+  &:hover {
+    color: #684f40;
+  }
 }
 
 .footer_text {
@@ -562,10 +830,16 @@ body {
 
 .testimonial_text_div {
   width: 45%;
-}
+  @include large-phone {
+    width: 65%;
+  }
+  @include phone {
+    width: 100%;
+  }
+  &.right {
+    float: right;
+  }
 
-.testimonial_text_div.right {
-  float: right;
 }
 
 .subheeadline {
@@ -573,7 +847,7 @@ body {
   margin-bottom: 12px;
   font-family: Cinzel, sans-serif;
   font-size: 24px;
-  line-height: 26px;
+  line-height: 1.125;
   font-weight: 400;
 }
 
@@ -582,17 +856,15 @@ body {
   margin-bottom: 36px;
   color: #0588ca;
   font-size: 18px;
-  line-height: 28px;
-}
-
-.assesment_text.big {
-  width: 450px;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.assesment_text._100 {
-  width: 100%;
+  line-height: 1.5;
+  &.big {
+    width: 450px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &._100 {
+    width: 100%;
+  }
 }
 
 .insurance_div {
@@ -658,303 +930,13 @@ html.w-mod-js *[data-ix="navbar-invisible"] {
   transform: translate(0px, -70px);
 }
 
-@media (max-width: 991px) {
-  .navbar {
-    display: block;
-  }
-  .logo {
-    width: 350px;
-  }
-  .logo.navbar {
-    width: 250px;
-  }
-  .logo.footer {
-    width: 220px;
-  }
-  .nav_menu {
-    background-color: #fff;
-  }
-  .main_tagline_div {
-    top: 5%;
-    width: 55%;
-    padding-left: 16px;
-  }
-  .main_headline {
-    font-size: 30px;
-    line-height: 32px;
-  }
-  .main_text {
-    font-size: 16px;
-    line-height: 28px;
-  }
-  .main_taglines_inside_div {
-    margin-left: 77px;
-  }
-  .main_btn {
-    width: auto;
-    padding-right: 20px;
-    padding-left: 19px;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .about_section {
-    background-image: -webkit-linear-gradient(270deg, rgba(226, 230, 233, .89), rgba(226, 230, 233, .89)), url('../images/sholder-image.jpg');
-    background-image: linear-gradient(180deg, rgba(226, 230, 233, .89), rgba(226, 230, 233, .89)), url('../images/sholder-image.jpg');
-    background-position: 0px 0px, 78% 50%;
-  }
-  .container_div.testimonials {
-    width: 90%;
-  }
-  .text_div {
-    width: 100%;
-  }
-  .image_div {
-    width: 100%;
-  }
-  .team_img {
-    margin-top: 0px;
-  }
-  .shoulder_pain_section {
-    background-image: -webkit-linear-gradient(270deg, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, .8)), url('../images/sholder-image.jpg');
-    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, .8)), url('../images/sholder-image.jpg');
-    background-position: 0px 0px, 78% 50%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-    background-attachment: scroll, fixed;
-  }
-  .shoulder_pain_test_div {
-    width: 100%;
-  }
-  .text_field {
-    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, .25);
-  }
-  .testimonial_div {
-    width: 45%;
-    margin-bottom: 40px;
-    padding-right: 31px;
-    padding-left: 31px;
-  }
-  .testimonial_div._1 {
-    width: 100%;
-    margin-bottom: 0px;
-  }
-  .testimonial_div._2 {
-    width: 100%;
-    margin-bottom: 0px;
-    background-position: 0px 0px, 22% 50%;
-  }
-  .testimonials_name {
-    margin-left: -31px;
-  }
-  .appointment_div {
-    width: 100%;
-    padding: 73px 107px;
-    background-image: -webkit-linear-gradient(270deg, #fff 11%, hsla(0, 0%, 100%, .63)), url('../images/location-img.jpg');
-    background-image: linear-gradient(180deg, #fff 11%, hsla(0, 0%, 100%, .63)), url('../images/location-img.jpg');
-    background-position: 0px 0px, 0px 50%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-    background-attachment: scroll, scroll;
-  }
-  .locations_section {
-    width: 100%;
-    padding: 50px 94px;
-  }
-  .contact_headline {
-    font-size: 28px;
-    line-height: 30px;
-  }
-  .contact_headline.white {
-    margin-left: 20px;
-    padding-left: 0px;
-  }
-  .text_area {
-    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, .25);
-  }
-  .location_div {
-    padding-right: 0px;
-  }
-  .address_text {
-    font-size: 14px;
-    line-height: 24px;
-  }
-  .phone {
-    font-size: 20px;
-  }
-  .menu_btn {
+.menu_btn {
     background-color: #004f7a;
     color: #fff;
-  }
-  .menu_btn:hover {
+  &:hover {
     background-color: #0588ca;
   }
-  .menu_btn.w--open {
+  &.w--open {
     background-color: #684f40;
   }
 }
-
-@media (max-width: 767px) {
-  .navbar {
-    display: block;
-  }
-  .logo {
-    width: 250px;
-    margin-bottom: 10px;
-  }
-  .logo.navbar {
-    margin-left: 6px;
-    padding-left: 0px;
-  }
-  .hero_section {
-    background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, .49), hsla(0, 0%, 100%, 0) 51%), url('../images/mobile-hero-img.jpg');
-    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, .49), hsla(0, 0%, 100%, 0) 51%), url('../images/mobile-hero-img.jpg');
-    background-position: 0px 0px, 0px 0px;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-  }
-  .bg_video {
-    display: none;
-  }
-  .main_tagline_div {
-    top: 2%;
-    width: 60%;
-    padding-left: 0px;
-  }
-  .main_headline {
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 22px;
-  }
-  .main_text {
-    display: none;
-  }
-  .main_taglines_inside_div {
-    margin-left: 20px;
-    padding-top: 10px;
-  }
-  .main_btn {
-    margin-bottom: 5px;
-    padding: 8px 10px 8px 15px;
-    font-size: 12px;
-    line-height: 14px;
-  }
-  .main_btn_img {
-    margin-right: 6px;
-  }
-  .about_section {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-  .section_headline {
-    font-size: 38px;
-    line-height: 40px;
-  }
-  .text {
-    font-size: 14px;
-    line-height: 26px;
-  }
-  .shoulder_pain_section {
-    padding-top: 75px;
-    padding-bottom: 75px;
-  }
-  .testimonials_section {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .testimonial_div {
-    width: 100%;
-  }
-  .testimonial_div._1 {
-    background-image: -webkit-linear-gradient(0deg, #fff, hsla(0, 0%, 100%, .47)), url('../images/testimonials-image1.jpg');
-    background-image: linear-gradient(90deg, #fff, hsla(0, 0%, 100%, .47)), url('../images/testimonials-image1.jpg');
-    background-position: 0px 0px, 50% 15%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-  }
-  .testimonial_div._2 {
-    padding-right: 11px;
-    background-image: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, .67), #fff), url('../images/testimonials-image2.jpg');
-    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, .67), #fff), url('../images/testimonials-image2.jpg');
-    background-position: 0px 0px, 22% 50%;
-    background-size: auto, cover;
-    background-repeat: repeat, no-repeat;
-  }
-  .testimonials_name {
-    padding-left: 30px;
-  }
-  .appointment_div {
-    padding-right: 65px;
-    padding-left: 65px;
-  }
-  .locations_section {
-    padding-right: 50px;
-    padding-left: 50px;
-  }
-  .testimonial_text_div {
-    width: 65%;
-  }
-}
-
-@media (max-width: 479px) {
-  .navbar {
-    display: block;
-  }
-  .hero_section {
-    background-position: 0px 0px, 50% 50%;
-  }
-  .main_tagline_div {
-    top: 6%;
-    width: 75%;
-  }
-  .main_headline {
-    margin-bottom: 56px;
-  }
-  .container_div {
-    width: 90%;
-  }
-  .section_headline {
-    margin-bottom: 20px;
-  }
-  .testimonials_section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .testimonial_div {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-  .testimonial_div._1 {
-    background-position: 0px 0px, 75% 50%;
-  }
-  .testimonial_div._2 {
-    padding-right: 20px;
-    background-position: 0px 0px, 14% 50%;
-  }
-  .test-img {
-    margin-bottom: 5px;
-  }
-  .appointment_div {
-    padding: 50px 20px;
-  }
-  .locations_section {
-    padding-right: 20px;
-    padding-bottom: 30px;
-    padding-left: 20px;
-  }
-  .contact_headline.white {
-    margin-left: 0px;
-  }
-  .location_div {
-    width: 100%;
-    margin-right: 0px;
-    margin-bottom: 40px;
-    margin-left: 0px;
-  }
-  .testimonial_text_div {
-    width: 100%;
-  }
-}
-
