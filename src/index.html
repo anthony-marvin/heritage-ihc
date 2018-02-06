@@ -12,13 +12,13 @@
   <link href="images/logo-256.jpg" rel="apple-touch-icon">
 </head>
 <body>
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav" data-ix="navbar-invisible"><a href="#" class="logo navbar w-nav-brand"><img src="images/logo.png" srcset="images/logo-p-500.png 500w, images/logo.png 850w" sizes="(max-width: 991px) 250px, 15vw"></a>
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav" data-ix="navbar-invisible"><a href="#" class="logo navbar w-nav-brand"><img class="logo__img" src="images/logo.png" srcset="images/logo-p-500.png 500w, images/logo.png 850w" sizes="(max-width: 991px) 250px, 15vw"></a>
     <nav role="navigation" class="nav_menu w-nav-menu"><a href="#top" class="navlink w-nav-link">Home</a><a href="#about" class="navlink w-nav-link">About</a><a href="#shoulder_pain_test" class="navlink w-nav-link">Shoulder Pain Assessment</a><a href="#testimonials" class="navlink w-nav-link">testimonials</a><a href="#location" class="navlink w-nav-link">make an appointment / locations</a></nav>
     <div class="menu_btn w-nav-button">
       <div class="w-icon-nav-menu"></div>
     </div>
   </div>
-  <div class="main_tagline_div"><a href="#" class="logo w-nav-brand"><img src="images/logo.png" srcset="images/logo-p-500.png 500w, images/logo.png 850w" sizes="(max-width: 479px) 71vw, (max-width: 767px) 240px, (max-width: 991px) 350px, 400px"></a>
+  <div class="main_tagline_div"><a href="#" class="logo w-nav-brand"><img src="images/logo.png" srcset="images/logo-p-500.png 500w, images/logo.png 850w" sizes="(max-width: 479px) 71vw, (max-width: 767px) 240px, (max-width: 991px) 350px, 400px" class="logo__img"></a>
     <div class="main_taglines_inside_div">
       <h1 class="main_headline">Get back in action with Integrative Muscle Therapy</h1>
       <div class="main_text">Shoulder problems, unlike other injuries, can develop slowly through repetitive, intensive motions.  At Heritage Integrative Healthcare we offer therapies that identify and address the root causes of our patient’s shoulder pain and offer a non-surgical approach. No referral necessary.</div><a href="#" class="main_btn w-inline-block"><img src="images/test-icon.png" class="main_btn_img"><div>Take the Shoulder Pain Assessment</div></a><a href="#" class="main_btn brown w-inline-block"><img src="images/appointment-icon.png" class="main_btn_img"><div>Schedule an Appointment Today</div></a></div>
@@ -28,47 +28,13 @@
   </div>
   <div id="shoulder_pain_test" class="shoulder_pain_section">
     <div class="container_div test">
-      <h1 class="section_headline">Shoulder Pain<br>Assessment</h1>
-      <p class="assesment_text big">Are you tired of having shoulder pain without any answers why?<br>Would you like a free phone consultation?</p>
-      <p class="assesment_text">We are easy to reach,  and you can tell us more about you with this Shoulder Pain Assessment.</p>
       <div class="shoulder_pain_test_div">
-        <div class="w-form">
-          <form id="email-form" name="email-form" data-name="Email Form"><input type="text" class="text_field w-input" maxlength="256" name="first-name" data-name="first name" placeholder="First Name" id="first-name" required=""><input type="text" class="text_field w-input" maxlength="256" name="last-name" data-name="last name" placeholder="Last Name" id="last-name" required=""><input type="text" class="text_field w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" id="email" required=""><input type="text" class="text_field w-input" maxlength="256" name="phone" data-name="phone" placeholder="Phone" id="phone" required="">
-            <div class="test_question">Do you experience restricted movement of your shoulder?</div>
-            <div class="radio_btn w-radio"><input type="radio" id="Yes" name="question-1" value="Yes" data-name="question 1" class="radio-button w-radio-input"><label for="Yes" class="field-label w-form-label">Yes</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="No" name="question-1" value="No" data-name="question 1" class="radio-button-2 w-radio-input"><label for="No" class="field-label w-form-label">No</label></div>
-            <div class="test_question">When is there pain?</div>
-            <div class="radio_btn w-radio"><input type="radio" id="at rest" name="question-2" value="at rest" data-name="question 2" class="radio-button w-radio-input"><label for="at rest" class="field-label w-form-label">At rest</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="with movement" name="question-2" value="with movement" data-name="question 2" class="radio-button w-radio-input"><label for="with movement" class="field-label w-form-label">With any movement</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="after activity" name="question-2" value="after activity" data-name="question 2" class="radio-button w-radio-input"><label for="after activity" class="field-label w-form-label">Only after activity</label></div>
-            <div class="test_question">Was your shoulder injury an...</div>
-            <div class="radio_btn w-radio"><input type="radio" id="abrupt trauma" name="question-3" value="abrupt trauma" data-name="question 3" class="radio-button w-radio-input"><label for="abrupt trauma" class="field-label w-form-label">Abrupt trauma</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="gradual loss of function" name="question-3" value="gradual loss of function" data-name="question 3" class="radio-button w-radio-input"><label for="gradual loss of function" class="field-label w-form-label">A gradual loss of function</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="painful without injury" name="question-3" value="painful without injury" data-name="question 3" class="radio-button w-radio-input"><label for="painful without injury" class="field-label w-form-label">Painful without injury</label></div>
-            <div class="test_question">Are you concerned about returning to activity / sports /or work?</div>
-            <div class="radio_btn w-radio"><input type="radio" id="Yes" name="question-4" value="Yes" data-name="question 4" class="radio-button w-radio-input"><label for="Yes-2" class="field-label w-form-label">Yes</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="No-2" name="question-4" value="No" data-name="question 4" class="radio-button-2 w-radio-input"><label for="No-2" class="field-label w-form-label">No</label></div>
-            <div class="test_question">Does your shoulder injury feel more like a...</div>
-            <div class="radio_btn w-radio"><input type="radio" id="muscle injury" name="question-5" value="muscle injury" data-name="question 5" class="radio-button w-radio-input"><label for="muscle injury" class="field-label w-form-label">Muscle injury</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="joint injury" name="question-5" value="joint injury" data-name="question 5" class="radio-button w-radio-input"><label for="joint injury" class="field-label w-form-label">Joint injury</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="nerve type pain" name="question-5" value="nerve type pain" data-name="question 5" class="radio-button w-radio-input"><label for="nerve type pain" class="field-label w-form-label">Nerve type pain</label></div>
-            <div class="test_question">Do you experience light numbness, dull ache or sharp burning pain?</div>
-            <div class="radio_btn w-radio"><input type="radio" id="light numbness" name="question-6" value="light numbness" data-name="question 6" class="radio-button w-radio-input"><label for="light numbness" class="field-label w-form-label">Light numbness</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="dull ache" name="question-6" value="dull ache" data-name="question 6" class="radio-button w-radio-input"><label for="dull ache" class="field-label w-form-label">Dull ache</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="sharp burning pain" name="question-6" value="sharp burning pain" data-name="question 6" class="radio-button w-radio-input"><label for="sharp burning pain" class="field-label w-form-label">Sharp burning pain</label></div>
-            <div class="test_question">Are any other areas also involved?</div>
-            <div class="radio_btn w-radio"><input type="radio" id="neck " name="question-7" value="neck " data-name="question 7" class="radio-button w-radio-input"><label for="neck " class="field-label w-form-label">Neck</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="elbow" name="question-7" value="elbow" data-name="question 7" class="radio-button w-radio-input"><label for="elbow" class="field-label w-form-label">Elbow</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="wrist" name="question-7" value="wrist" data-name="question 7" class="radio-button w-radio-input"><label for="wrist" class="field-label w-form-label">Wrist</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="hand" name="question-7" value="hand" data-name="question 7" class="radio-button w-radio-input"><label for="hand" class="field-label w-form-label">Hand</label></div>
-            <div class="radio_btn w-radio"><input type="radio" id="no other areas" name="question-7" value="no other areas" data-name="question 7" class="radio-button w-radio-input"><label for="no other areas" class="field-label w-form-label">No other areas</label></div><input type="submit" value="Submit" data-wait="Please wait..." class="submit_btn w-button"></form>
-          <div class="success_msg w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-          </div>
-          <div class="error_msg w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
-        </div>
+        <h1 class="section_headline">Shoulder Pain<br>Assessment</h1>
+        <p class="assesment_text big">Are you tired of having shoulder pain without any answers why?<br>Would you like a free phone consultation?</p>
+        <p class="assesment_text">We are easy to reach,  and you can tell us more about you with this Shoulder Pain Assessment.</p>
+        <!-- forms.glacial.com script begins here -->
+        <script type="text/javascript" defer src="//forms.glacial.com/embed/3408985.js" data-role="form" data-default-width="650px"></script>
+        <!-- forms.glacial.com script ends here -->
       </div>
     </div>
   </div>
@@ -116,13 +82,9 @@
         <h1 class="contact_headline">Make an Appointment</h1>
         <p class="assesment_text _100">If you would like to save time and learn more about your shoulder injury, contact our office to schedule an examination.<br>Our staff are friendly and can readily answer any questions you may have about available appointment times or insurance coverage.</p>
         <div class="contact_form w-form">
-          <form id="email-form-2" name="email-form-2" data-name="Email Form 2"><input type="text" class="text_field w-input" maxlength="256" name="name" data-name="Name" placeholder="Name *" id="name" required=""><input type="text" class="text_field w-input" maxlength="256" name="Phone" data-name="Phone" placeholder="Phone Number *" id="Phone-2" required=""><input type="text" class="text_field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Email Address *" id="Email-3" required=""><input type="text" class="text_field w-input" maxlength="256" name="subject" data-name="subject" placeholder="Subject *" id="subject" required=""><textarea id="message" name="message" placeholder="Message *" maxlength="5000" data-name="message" required="" class="text_area w-input"></textarea><input type="submit" value="Submit" data-wait="Please wait..." class="submit_btn w-button"></form>
-          <div class="w-form-done">
-            <div>Thank you! Your submission has been received!</div>
-          </div>
-          <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
+          <!-- forms.glacial.com script begins here -->
+          <script type="text/javascript" defer src="//forms.glacial.com/embed/3409790.js" data-role="form" data-default-width="650px"></script>
+          <!-- forms.glacial.com script ends here -->
         </div>
       </div>
       <div class="locations_section">
